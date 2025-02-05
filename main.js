@@ -162,7 +162,7 @@ const products = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    // gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
     function renderProducts() {
         const productGrid = document.querySelector('.product-grid');
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     renderProducts();
     initHeartButtons();
-    // initButtonAnimations();
+    initButtonAnimations();
 
     // Loading Animation
     const body = document.body;
@@ -292,13 +292,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 600);
     });
 });
-// Enhanced shimmer effect for loading states
-function addShimmerEffect() {
-    const elements = document.querySelectorAll('.product-image-wrapper, .product-info');
-    elements.forEach(element => {
-        element.classList.add('shimmer');
-    });
-}
-
-// Initialize all animations
-addShimmerEffect();

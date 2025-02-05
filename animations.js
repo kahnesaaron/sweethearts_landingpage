@@ -51,5 +51,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize lazy loading
-    lazyLoadImages();
+    // lazyLoadImages();
 });
