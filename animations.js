@@ -13,25 +13,21 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Performance-optimierte Lazy Loading Animation
-const lazyLoadImages = () => {
-    const images = document.querySelectorAll('.product-image');
-    
-    images.forEach(img => {
-        img.style.opacity = '0';
-        img.addEventListener('load', () => {
-            img.style.transition = 'opacity 0.4s ease-in';
-            img.style.opacity = '1';
-        });
-    });
-};
-
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.product-card, .section-header, .hero-content');
+    const productCards = document.querySelectorAll('.product-card');
     
-    animateElements.forEach(element => {
-        element.classList.add('scroll-reveal');
-        observer.observe(element);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    productCards.forEach(card => {
+        card.classList.add('scroll-reveal');
+        observer.observe(card);
     });
 
     const headerAnimation = document.querySelector('#headerAnimation');
@@ -49,7 +45,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Initialize lazy loading
-    // lazyLoadImages();
 });
