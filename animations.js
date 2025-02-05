@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         headerAnimation.play();
         
         headerAnimation.addEventListener('frame', (e) => {
-            if (e.detail.frame > 60 && !hasReachedTarget) {
+            if (e.detail.frame > 110 && !hasReachedTarget) {
                 hasReachedTarget = true;
                 requestAnimationFrame(() => {
                     headerAnimation.pause();
