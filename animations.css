@@ -31,17 +31,23 @@
     transform-origin: left;
     animation: loadProgress 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+  body {
+      overflow-x: hidden; /* Prevent horizontal scroll */
+  }
 
-/* Element Animations */
-.product-card,
-.product-info,
-.cta-button {
-    overflow: visible;
-}
+  .product-card {
+      overflow: visible;
+  }
 
-.cta-button {
-    position: relative;
-}
+  .product-info {
+      position: relative;
+      overflow: hidden; /* Contain any horizontal overflow */
+  }
+
+  .cta-button {
+      position: relative;
+      overflow: visible; /* Keep this to allow hearts to burst outside */
+  }
 .burst-heart {
     position: absolute;
     width: 20px;

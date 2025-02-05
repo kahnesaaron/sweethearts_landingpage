@@ -200,14 +200,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderProducts();
 
+    let isAnimating = false;
     const buttons = document.querySelectorAll('.cta-button');
+    
     buttons.forEach(button => {
         ScrollTrigger.create({
             trigger: button,
             start: 'top bottom-=100',
             end: 'bottom top+=100',
             once: true,
-            onEnter: () => button.classList.add('exploded')
+            onEnter: () => {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    button.classList.add('exploded');
+                    setTimeout(() => {
+                        isAnimating = false;
+                    }, 800);
+                }
+            }
         });
     });
 });
