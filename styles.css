@@ -1,0 +1,64 @@
+:root {
+    --romantic-pink: #FFE4E8;
+    --soft-rose: #FF8BA7;
+    --warm-purple: #9C6B7C;
+    --cream: #FFF9F4;
+    --soft-shadow: 0 8px 30px rgba(156, 107, 124, 0.15);
+    --card-shadow: 0 15px 35px rgba(255, 139, 167, 0.1);
+    --text-shadow: 0 2px 4px rgba(156, 107, 124, 0.1);
+}
+
+.product-card {
+    background: white;
+    position: relative;
+    overflow: visible;
+}
+
+.product-info {
+    padding: 1.5rem;
+    overflow: visible;
+}
+
+.heart-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart-icon {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke-width: 2;
+}
+
+.price-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.cta-button {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    overflow: visible;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}

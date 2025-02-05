@@ -1,0 +1,152 @@
+/* Loading Animation */
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--gradient-hero);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease-out;
+}
+
+.loading-content {
+    text-align: center;
+    transform: translateY(-20px);
+}
+
+.loading-progress {
+    width: clamp(200px, 40vw, 300px);
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 100px;
+    margin: 2rem auto;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: white;
+    border-radius: 100px;
+    transform-origin: left;
+    animation: loadProgress 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Element Animations */
+.product-card,
+.product-info,
+.cta-button {
+    overflow: visible;
+}
+
+.burst-heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #FF1E56;
+    z-index: 1000;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") center/contain no-repeat;
+    animation: heartBurst 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: var(--delay);
+    filter: drop-shadow(0 0 2px rgba(255, 30, 86, 0.3));
+    pointer-events: none;
+}
+
+.cta-button {
+    position: relative;
+    background: linear-gradient(90deg,
+        var(--soft-rose) var(--loading-progress, 0%),
+        #FFE4E8 var(--loading-progress, 0%)
+    );
+    border-radius: 25px;
+    padding: 12px 24px;
+    overflow: visible;
+}
+
+.cta-button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Premium Animation Keyframes */
+@keyframes loadProgress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+@keyframes heartBurst {
+    0% {
+        transform: translate(
+            calc(-50% + var(--start-x)),
+            calc(-50% + var(--start-y))
+        ) scale(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(
+            calc(-50% + var(--start-x) + cos(var(--angle)) * 15px),
+            calc(-50% + var(--start-y) + sin(var(--angle)) * 15px)
+        ) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes explodeEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    75% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+@keyframes floatIn {
+    0% { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmerEffect {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Element States */
+.exploded {
+    animation: explodeEffect 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card {
+    animation: floatIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+}
+
+/* Shimmer Effect for Loading States */
+.shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: shimmerEffect 1.5s infinite;
+}
