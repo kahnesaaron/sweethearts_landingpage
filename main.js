@@ -206,28 +206,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const buttons = document.querySelectorAll('.cta-button');
         
         buttons.forEach(button => {
-            gsap.set(button, {'--loading-progress': 0});
-            gsap.to(button, {
-                '--loading-progress': '100%',
-                scrollTrigger: {
-                    trigger: button,
-                    start: 'top bottom',
-                    end: 'top 70%',
-                    scrub: 1,
-                    onUpdate: (self) => {
-                        if (self.progress === 1 && !button.classList.contains('exploded')) {
-                            button.classList.add('exploded');
-                            createHeartBurst(button);
-                        }
-                        if (self.progress < 0.9 && button.classList.contains('exploded')) {
-                            button.classList.remove('exploded');
-                            button.querySelectorAll('.burst-heart').forEach(heart => heart.remove());
-                        }
-                    }
+            ScrollTrigger.create({
+                trigger: button,
+                start: 'top bottom',
+                end: 'top 70%',
+                onEnter: () => {
+                    button.classList.add('exploded');
+                    createHeartBurst(button);
+                },
+                onLeaveBack: () => {
+                    button.classList.remove('exploded');
+                    button.querySelectorAll('.burst-heart').forEach(heart => heart.remove());
                 }
             });
         });
     }
+    
     // Pre-calculate heart positions and angles once
     const heartTemplates = Array.from({ length: 12 }, (_, i) => ({
         angle: (i * 30) * (Math.PI / 180),
