@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     renderProducts();
     initHeartButtons();
-    initButtonAnimations();
+    // initButtonAnimations();
 
     // Loading Animation
     const body = document.body;
