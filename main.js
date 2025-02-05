@@ -228,30 +228,31 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // Pre-calculate heart positions and angles once
+    const heartTemplates = Array.from({ length: 12 }, (_, i) => ({
+        angle: (i * 30) * (Math.PI / 180),
+        className: 'burst-heart'
+    }));
     function createHeartBurst(button) {
         const rect = button.getBoundingClientRect();
         const width = rect.width;
         const height = rect.height;
         
-        // Create hearts in a perfect circle, skipping center
-        for (let i = 0; i < 12; i++) {
-            const angle = (i * 30) * (Math.PI / 180);
-            
-            // Start directly from border
+        // Use pre-calculated templates to create hearts
+        heartTemplates.forEach(template => {
             const heart = document.createElement('div');
-            heart.className = 'burst-heart';
+            heart.className = template.className;
             
-            // Position exactly on border
-            const startX = Math.cos(angle) * (width/2);
-            const startY = Math.sin(angle) * (height/2);
+            const startX = Math.cos(template.angle) * (width/2);
+            const startY = Math.sin(template.angle) * (height/2);
             
             heart.style.setProperty('--start-x', `${startX}px`);
             heart.style.setProperty('--start-y', `${startY}px`);
-            heart.style.setProperty('--angle', `${angle}rad`);
-            button.appendChild(heart);
+            heart.style.setProperty('--angle', `${template.angle}rad`);
             
-            heart.addEventListener('animationend', () => heart.remove());
-        }
+            button.appendChild(heart);
+            heart.addEventListener('animationend', () => heart.remove(), { once: true });
+        });
     }
     renderProducts();
     initButtonAnimations();
