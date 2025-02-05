@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         products.forEach(product => {
             const article = document.createElement('article');
-            article.className = 'product-card scroll-reveal';
+            article.className = 'product-card';
             article.innerHTML = `
                 <div class="product-image-wrapper">
                     <img src="${product.image}" alt="${product.title}" class="product-image">
