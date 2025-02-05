@@ -27,12 +27,12 @@ const lazyLoadImages = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.product-card, .section-header, .hero-content');
+    // const animateElements = document.querySelectorAll('.product-card, .section-header, .hero-content');
     
-    animateElements.forEach(element => {
-        element.classList.add('scroll-reveal');
-        observer.observe(element);
-    });
+    // animateElements.forEach(element => {
+    //     element.classList.add('scroll-reveal');
+    //     observer.observe(element);
+    // });
 
     const headerAnimation = document.querySelector('#headerAnimation');
     let hasReachedTarget = false;
