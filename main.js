@@ -198,89 +198,16 @@ document.addEventListener('DOMContentLoaded', () => {
         productGrid.appendChild(fragment);
     }
 
-    const heartContainer = document.createElement('div');
-    heartContainer.className = 'heart-container';
-    document.body.appendChild(heartContainer);
-
-    const HEART_COUNT = 12;
-    const hearts = Array.from({ length: HEART_COUNT }, () => {
-        const heart = document.createElement('div');
-        heart.className = 'burst-heart';
-        heartContainer.appendChild(heart);
-        return heart;
-    });
-
-    function createHeartBurst(button) {
-        const rect = button.getBoundingClientRect();
-    
-        hearts.forEach((heart, i) => {
-            const angle = (i * 30) * (Math.PI / 180);
-            heart.style.cssText = `
-                top: ${rect.top}px;
-                left: ${rect.left}px;
-                transform-origin: ${rect.width/2}px ${rect.height/2}px;
-                animation: heartBurst 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-                --angle: ${angle}rad;
-            `;
-        });
-    }
-    function initButtonAnimations() {
-        const buttons = document.querySelectorAll('.cta-button');
-        
-        buttons.forEach(button => {
-            ScrollTrigger.create({
-                trigger: button,
-                start: 'top bottom',
-                end: 'top 70%',
-                onEnter: () => {
-                    button.classList.add('exploded');
-                    createHeartBurst(button);
-                },
-                onLeaveBack: () => {
-                    button.classList.remove('exploded');
-                    hearts.forEach(heart => {
-                        heart.style.animation = 'none';
-                    });
-                }
-            });
-        });
-    }
-    
     renderProducts();
-    initButtonAnimations();
 
-
-    // Loading Animation
-    const body = document.body;
-    
-    // Create and inject loading overlay
-    const loadingOverlay = document.createElement('div');
-    loadingOverlay.className = 'loading-overlay';
-    loadingOverlay.innerHTML = `
-        <div class="loading-content">
-            <div class="loading-icon">
-                <svg viewBox="0 0 24 24" class="heart-icon">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-            </div>
-            <div class="loading-progress">
-                <div class="progress-bar"></div>
-            </div>
-        </div>
-    `;
-    body.appendChild(loadingOverlay);
-
-    // Stagger product card animations
-    const productCards = document.querySelectorAll('.product-card');
-    productCards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-    });
-
-    // Remove loading overlay
-    window.addEventListener('load', () => {
-        loadingOverlay.style.opacity = '0';
-        setTimeout(() => {
-            loadingOverlay.remove();
-        }, 600);
+    const buttons = document.querySelectorAll('.cta-button');
+    buttons.forEach(button => {
+        ScrollTrigger.create({
+            trigger: button,
+            start: 'top bottom-=100',
+            end: 'bottom top+=100',
+            once: true,
+            onEnter: () => button.classList.add('exploded')
+        });
     });
 });
