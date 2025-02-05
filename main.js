@@ -184,7 +184,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="product-info">
                     <h3 class="product-title">${product.title}</h3>
                     <p class="product-description">${product.description}</p>
-                    <a href="${product.link}" class="cta-button" target="_blank" rel="noopener"><span>Jetzt shoppen</span></a>
+                    <a href="${product.link}" class="cta-button" target="_blank" rel="noopener">
+                        <span>Jetzt shoppen</span>
+                        ${Array.from({length: 16}, (_, i) => `
+                            <span class="burst-heart" style="--i: ${i}">♥</span>
+                        `).join('')}
+                    </a>
                 </div>
             `;
             fragment.appendChild(article);
@@ -193,15 +198,32 @@ document.addEventListener('DOMContentLoaded', () => {
         productGrid.appendChild(fragment);
     }
 
-    function initHeartButtons() {
-        const heartButtons = document.querySelectorAll('.heart-button');
-        heartButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                button.classList.toggle('active');
-            });
+    const heartContainer = document.createElement('div');
+    heartContainer.className = 'heart-container';
+    document.body.appendChild(heartContainer);
+
+    const HEART_COUNT = 12;
+    const hearts = Array.from({ length: HEART_COUNT }, () => {
+        const heart = document.createElement('div');
+        heart.className = 'burst-heart';
+        heartContainer.appendChild(heart);
+        return heart;
+    });
+
+    function createHeartBurst(button) {
+        const rect = button.getBoundingClientRect();
+    
+        hearts.forEach((heart, i) => {
+            const angle = (i * 30) * (Math.PI / 180);
+            heart.style.cssText = `
+                top: ${rect.top}px;
+                left: ${rect.left}px;
+                transform-origin: ${rect.width/2}px ${rect.height/2}px;
+                animation: heartBurst 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+                --angle: ${angle}rad;
+            `;
         });
     }
-
     function initButtonAnimations() {
         const buttons = document.querySelectorAll('.cta-button');
         
@@ -216,41 +238,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 onLeaveBack: () => {
                     button.classList.remove('exploded');
-                    button.querySelectorAll('.burst-heart').forEach(heart => heart.remove());
+                    hearts.forEach(heart => {
+                        heart.style.animation = 'none';
+                    });
                 }
             });
         });
     }
     
-    // Pre-calculate heart positions and angles once
-    const heartTemplates = Array.from({ length: 12 }, (_, i) => ({
-        angle: (i * 30) * (Math.PI / 180),
-        className: 'burst-heart'
-    }));
-    function createHeartBurst(button) {
-        const rect = button.getBoundingClientRect();
-        const width = rect.width;
-        const height = rect.height;
-        
-        // Use pre-calculated templates to create hearts
-        heartTemplates.forEach(template => {
-            const heart = document.createElement('div');
-            heart.className = template.className;
-            
-            const startX = Math.cos(template.angle) * (width/2);
-            const startY = Math.sin(template.angle) * (height/2);
-            
-            heart.style.setProperty('--start-x', `${startX}px`);
-            heart.style.setProperty('--start-y', `${startY}px`);
-            heart.style.setProperty('--angle', `${template.angle}rad`);
-            
-            button.appendChild(heart);
-            heart.addEventListener('animationend', () => heart.remove(), { once: true });
-        });
-    }
     renderProducts();
-    initHeartButtons();
     initButtonAnimations();
+
 
     // Loading Animation
     const body = document.body;
