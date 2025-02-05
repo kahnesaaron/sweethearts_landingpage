@@ -162,7 +162,7 @@ const products = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
 
     function renderProducts() {
         const productGrid = document.querySelector('.product-grid');
