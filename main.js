@@ -1,11 +1,11 @@
 const products = [
     {
         id: 1,
-        title: "Steiff Teddybär Honey",
-        description: "Klassischer Kuschelbär in Honigbraun, 38cm",
-        price: 34.99,
-        image: "https://m.media-amazon.com/images/I/61VfHAqk3TL._AC_SL1000_.jpg",
-        link: "https://amzn.to/3Q5x5dk"
+        title: "Sheldon Octopus Beanie Boo",
+        description: "",
+        price: 7.99,
+        image: "https://m.media-amazon.com/images/I/71nwUpjtIUL._AC_SL1500_.jpg",
+        link: "https://amzn.to/4aR56aQ"
     },
     {
         id: 2,
@@ -50,19 +50,19 @@ const products = [
     },
     {
         id: 7,
-        title: "Pokémon Pikachu",
-        description: "Offizielles Pokémon Plüsch, 20cm",
-        price: 19.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B08MVDW5D5"
+        title: "Flint Dragon Beanie Boo",
+        description: "",
+        price: 7.99,
+        image: "https://m.media-amazon.com/images/I/71PXjYaysWL._AC_SL1500_.jpg",
+        link: "https://amzn.to/3Qb72Br"
     },
     {
         id: 8,
-        title: "Alpaka Kuscheltier XXL",
-        description: "Flauschiges Alpaka in Regenbogenfarben, 50cm",
-        price: 34.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B07SQTWW7G"
+        title: "Beanie Boos Chessie Monkey",
+        description: "",
+        price: 7.99,
+        image: "https://m.media-amazon.com/images/I/71PhWZYzg3L._AC_SL1500_.jpg",
+        link: "https://amzn.to/4jRWDbG"
     },
     // {
     //     id: 9,
