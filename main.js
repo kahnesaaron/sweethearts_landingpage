@@ -3,49 +3,50 @@ const products = [
         id: 1,
         title: "Steiff Teddybär Honey",
         description: "Klassischer Kuschelbär in Honigbraun, 38cm",
-        price: 39.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B000EQHC44"
+        price: 34.99,
+        image: "https://m.media-amazon.com/images/I/61VfHAqk3TL._AC_SL1000_.jpg",
+        link: "https://amzn.to/3Q5x5dk"
     },
     {
         id: 2,
-        title: "Einhorn Luna XL",
+        title: "Heather die Einhorn-Katze 15cm",
         description: "Regenbogen Plüsch-Einhorn mit Glitzeraugen, 65cm",
-        price: 29.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B08MVDW5D5"
+        price: 8.99,
+        image: "https://m.media-amazon.com/images/I/71CsimT+mKL._AC_SL1500_.jpg",
+        link: "https://amzn.to/3WR6h4n"
     },
     {
         id: 3,
-        title: "Kawaii Panda Baby",
-        description: "Flauschiger Panda im Anime-Style, 25cm",
-        price: 19.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B09B9ZY8K8"
+        title: "Lainey Leopard 15cm",
+        description: "Entdecke Lainey, den süßen Leoparden mit dem extra flauschigen Fell! Seine großen, funkelnden Augen und die typischen Leoparden-Flecken machen ihn zu einem echten Hingucker. Das superweiche Material lädt zum Kuscheln ein und zaubert garantiert ein Lächeln ins Gesicht.",
+        price: 14.99,
+        image: "https://m.media-amazon.com/images/I/61HsKXiIcLL._AC_SL1024_.jpg",
+        link: "https://amzn.to/4aO33EC"
     },
+
     {
         id: 4,
-        title: "Nici Koala Dreams",
-        description: "Süßer Koala mit Schlafmütze, 32cm",
-        price: 24.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B07Q3BVQX9"
+        title: "Harmony Unicorn",
+        description: "Süßes regenbogen Einhorn",
+        price: 14.99,
+        image: "https://m.media-amazon.com/images/I/51-k+ODb+oL._AC_SL1024_.jpg",
+        link: "https://amzn.to/4143gQJ"
     },
     {
         id: 5,
-        title: "Pusheen Katze",
-        description: "Original Pusheen Plüschkatze, 30cm",
-        price: 22.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B00VGIW1V8"
+        title: "TY Beanie Boos 15 cm Plush Toy",
+        description: "",
+        price: 11.99,
+        image: "https://m.media-amazon.com/images/I/61jPSnw5xvL._AC_SL1000_.jpg",
+        link: "https://amzn.to/40SE4eL"
     },
     {
         id: 6,
-        title: "Jellycat Hase Bashful",
-        description: "Luxuriöser Plüschhase in Beige, 31cm",
-        price: 27.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B00JCZ7L1M"
+        title: "Husky Thunder Baby Blue",
+        description: "",
+        price: 11.99,
+        image: "https://m.media-amazon.com/images/I/61rL-7simxL._AC_SL1500_.jpg",
+        link: "https://amzn.to/4164VoP"
     },
     {
         id: 7,
@@ -63,102 +64,102 @@ const products = [
         image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
         link: "https://www.amazon.de/dp/B07SQTWW7G"
     },
-    {
-        id: 9,
-        title: "Baby Yoda Plüsch",
-        description: "The Child aus The Mandalorian, 25cm",
-        price: 29.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B0825SNNRV"
-    },
-    {
-        id: 10,
-        title: "Squishmallow Axolotl",
-        description: "Trendiges Axolotl in Rosa, 20cm",
-        price: 18.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B09QXTN5B4"
-    },
-    {
-        id: 11,
-        title: "Molang Bunny",
-        description: "Süßes Molang Häschen aus Korea, 25cm",
-        price: 21.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B07N1JPPX8"
-    },
-    {
-        id: 12,
-        title: "Djungelskog Bär",
-        description: "IKEA Braunbär Kuscheltier, 40cm",
-        price: 24.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B08Q3HBQPB"
-    },
-    {
-        id: 13,
-        title: "Rilakkuma Bär",
-        description: "Original San-X Rilakkuma, 35cm",
-        price: 32.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B00VXKBS0M"
-    },
-    {
-        id: 14,
-        title: "Dino Squishmallow",
-        description: "Weicher Dinosaurier in Mintgrün, 30cm",
-        price: 23.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B09KMXYZ2P"
-    },
-    {
-        id: 15,
-        title: "Totoro Plüsch",
-        description: "Studio Ghibli Totoro Kuscheltier, 28cm",
-        price: 25.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B00VGIW1X6"
-    },
-    {
-        id: 16,
-        title: "Avocado Plüsch",
-        description: "Trendiges Avocado Kissen, 40cm",
-        price: 19.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B07XFCLJ6Q"
-    },
-    {
-        id: 17,
-        title: "Blobfish Plüsch",
-        description: "Viraler TikTok Blobfish, 20cm",
-        price: 17.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B08MVDW5D5"
-    },
-    {
-        id: 18,
-        title: "Shiba Inu Plüsch",
-        description: "Japanischer Shiba Hund, 30cm",
-        price: 26.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B07Q3BVQX9"
-    },
-    {
-        id: 19,
-        title: "Capybara XL",
-        description: "Trending Capybara Plüsch, 45cm",
-        price: 29.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B0BN6WXYZ1"
-    },
-    {
-        id: 20,
-        title: "Faultier Kuscheltier",
-        description: "Süßes Faultier mit Baby, 35cm",
-        price: 22.99,
-        image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
-        link: "https://www.amazon.de/dp/B07Q3BVQX9"
-    }
+    // {
+    //     id: 9,
+    //     title: "Baby Yoda Plüsch",
+    //     description: "The Child aus The Mandalorian, 25cm",
+    //     price: 29.99,
+    //     image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
+    //     link: "https://www.amazon.de/dp/B0825SNNRV"
+    // },
+    // {
+    //     id: 10,
+    //     title: "Squishmallow Axolotl",
+    //     description: "Trendiges Axolotl in Rosa, 20cm",
+    //     price: 18.99,
+    //     image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
+    //     link: "https://www.amazon.de/dp/B09QXTN5B4"
+    // },
+    // {
+    //     id: 11,
+    //     title: "Molang Bunny",
+    //     description: "Süßes Molang Häschen aus Korea, 25cm",
+    //     price: 21.99,
+    //     image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
+    //     link: "https://www.amazon.de/dp/B07N1JPPX8"
+    // },
+    // {
+    //     id: 12,
+    //     title: "Djungelskog Bär",
+    //     description: "IKEA Braunbär Kuscheltier, 40cm",
+    //     price: 24.99,
+    //     image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
+    //     link: "https://www.amazon.de/dp/B08Q3HBQPB"
+    // },
+    // {
+    //     id: 13,
+    //     title: "Rilakkuma Bär",
+    //     description: "Original San-X Rilakkuma, 35cm",
+    //     price: 32.99,
+    //     image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
+    //     link: "https://www.amazon.de/dp/B00VXKBS0M"
+    // },
+    // {
+    //     id: 14,
+    //     title: "Dino Squishmallow",
+    //     description: "Weicher Dinosaurier in Mintgrün, 30cm",
+    //     price: 23.99,
+    //     image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
+    //     link: "https://www.amazon.de/dp/B09KMXYZ2P"
+    // },
+    // {
+    //     id: 15,
+    //     title: "Totoro Plüsch",
+    //     description: "Studio Ghibli Totoro Kuscheltier, 28cm",
+    //     price: 25.99,
+    //     image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
+    //     link: "https://www.amazon.de/dp/B00VGIW1X6"
+    // },
+    // {
+    //     id: 16,
+    //     title: "Avocado Plüsch",
+    //     description: "Trendiges Avocado Kissen, 40cm",
+    //     price: 19.99,
+    //     image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
+    //     link: "https://www.amazon.de/dp/B07XFCLJ6Q"
+    // },
+    // {
+    //     id: 17,
+    //     title: "Blobfish Plüsch",
+    //     description: "Viraler TikTok Blobfish, 20cm",
+    //     price: 17.99,
+    //     image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
+    //     link: "https://www.amazon.de/dp/B08MVDW5D5"
+    // },
+    // {
+    //     id: 18,
+    //     title: "Shiba Inu Plüsch",
+    //     description: "Japanischer Shiba Hund, 30cm",
+    //     price: 26.99,
+    //     image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
+    //     link: "https://www.amazon.de/dp/B07Q3BVQX9"
+    // },
+    // {
+    //     id: 19,
+    //     title: "Capybara XL",
+    //     description: "Trending Capybara Plüsch, 45cm",
+    //     price: 29.99,
+    //     image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
+    //     link: "https://www.amazon.de/dp/B0BN6WXYZ1"
+    // },
+    // {
+    //     id: 20,
+    //     title: "Faultier Kuscheltier",
+    //     description: "Süßes Faultier mit Baby, 35cm",
+    //     price: 22.99,
+    //     image: "https://m.media-amazon.com/images/I/71uzJ9f0tcL._AC_UF894,1000_QL80_.jpg",
+    //     link: "https://www.amazon.de/dp/B07Q3BVQX9"
+    // }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
