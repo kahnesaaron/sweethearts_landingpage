@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://flausch-freunde.shop/sitemap.xml
