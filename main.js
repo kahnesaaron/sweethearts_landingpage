@@ -228,3 +228,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+function initializeTracking() {
+    // Event-Listener für alle Produkt-Clicks
+    document.querySelectorAll('.cta-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            const productCard = this.closest('.product-card');
+            const productTitle = productCard.querySelector('.product-title').textContent;
+            
+            gtag('event', 'product_click', {
+                'event_category': 'ecommerce',
+                'event_label': productTitle,
+                'value': parseFloat(productCard.querySelector('.price-tag').textContent)
+            });
+        });
+    });
+}
+
+// Füge diese Zeile am Ende deines DOMContentLoaded Event-Listeners hinzu
+document.addEventListener('DOMContentLoaded', () => {
+    renderProducts();
+    initializeTracking();
+});
