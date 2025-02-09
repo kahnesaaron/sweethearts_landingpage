@@ -1,69 +1,68 @@
 const products = [
     {
         id: 1,
-        title: "Sheldon Octopus Beanie Boo",
-        description: "",
+        title: "Sheldon der Magische Oktopus",
+        description: "Tauche ein in eine Welt voller Wunder mit Sheldon! Seine acht flauschigen Arme und die funkelnden Glitzeraugen machen ihn zum perfekten Kuschelpartner. Ein TikTok-Favorit, der dein Herz im Sturm erobern wird! ✨🐙",
         price: 7.99,
         image: "https://m.media-amazon.com/images/I/71nwUpjtIUL._AC_SL1500_.jpg",
         link: "https://amzn.to/4aR56aQ"
     },
     {
         id: 2,
-        title: "Heather die Einhorn-Katze 15cm",
-        description: "Regenbogen Plüsch-Einhorn mit Glitzeraugen, 65cm",
+        title: "Heather die Einhorn-Katze",
+        description: "Erlebe pure Magie mit Heather, der bezaubernden Einhorn-Katze! Ihre regenbogenfarbenen Details und die glitzernden Augen machen sie zu einem einzigartigen Schatz. Das perfekte Geschenk für alle Fantasy-Liebhaber! 🌈✨",
         price: 8.99,
         image: "https://m.media-amazon.com/images/I/71CsimT+mKL._AC_SL1500_.jpg",
         link: "https://amzn.to/3WR6h4n"
     },
     {
         id: 3,
-        title: "Lainey Leopard 15cm",
-        description: "Entdecke Lainey, den süßen Leoparden mit dem extra flauschigen Fell! Seine großen, funkelnden Augen und die typischen Leoparden-Flecken machen ihn zu einem echten Hingucker. Das superweiche Material lädt zum Kuscheln ein und zaubert garantiert ein Lächeln ins Gesicht.",
+        title: "Lainey der Leoparden-Schatz",
+        description: "Begegne Lainey, deinem wilden aber sanften Begleiter! Mit extra weichem Premium-Fell und handgearbeiteten Details. Ihre großen, ausdrucksstarken Augen erzählen Geschichten von magischen Abenteuern. 🐆💫",
         price: 14.99,
         image: "https://m.media-amazon.com/images/I/61HsKXiIcLL._AC_SL1024_.jpg",
         link: "https://amzn.to/4aO33EC"
     },
-
     {
         id: 4,
-        title: "Harmony Unicorn",
-        description: "Süßes regenbogen Einhorn",
+        title: "Harmony das Zauber-Einhorn",
+        description: "Entdecke Harmony, dein persönlicher Glücksbringer! Mit schimmerndem Regenbogen-Fell und einer magischen Aura verzaubert sie jeden Raum. Der TikTok-Star zum Kuscheln! 🦄💖",
         price: 14.99,
         image: "https://m.media-amazon.com/images/I/51-k+ODb+oL._AC_SL1024_.jpg",
         link: "https://amzn.to/4143gQJ"
     },
     {
         id: 5,
-        title: "TY Beanie Boos 15 cm Plush Toy",
-        description: "",
+        title: "Luna der Beanie Boo Star",
+        description: "Treffe Luna, die Königin der Knuddeligkeit! Mit ihren großen Glitzeraugen und dem superweichen Fell verzaubert sie jeden auf den ersten Blick. Ein Must-Have für deine Beanie Boo Sammlung! ⭐️🌙",
         price: 11.99,
         image: "https://m.media-amazon.com/images/I/61jPSnw5xvL._AC_SL1000_.jpg",
         link: "https://amzn.to/40SE4eL"
     },
     {
         id: 6,
-        title: "Husky Thunder Baby Blue",
-        description: "",
+        title: "Thunder der Baby Husky",
+        description: "Thunder bringt arktischen Zauber in dein Zuhause! Mit seinem himmelblauem Fell und treuen Augen wird er dein loyalster Kuschelfreund. Ein echtes TikTok-Phänomen! ❄️🐺",
         price: 11.99,
         image: "https://m.media-amazon.com/images/I/61rL-7simxL._AC_SL1500_.jpg",
         link: "https://amzn.to/4164VoP"
     },
     {
         id: 7,
-        title: "Flint Dragon Beanie Boo",
-        description: "",
+        title: "Flint der Feuerdrache",
+        description: "Erlebe Abenteuer mit Flint, dem mutigen Drachenfreund! Seine schillernden Flügel und das samtige Fell machen ihn zu einem magischen Begleiter. Der perfekte Beschützer für deine Träume! 🐉✨",
         price: 7.99,
         image: "https://m.media-amazon.com/images/I/71PXjYaysWL._AC_SL1500_.jpg",
         link: "https://amzn.to/3Qb72Br"
     },
     {
         id: 8,
-        title: "Beanie Boos Chessie Monkey",
-        description: "",
+        title: "Chessie der Schelmische Affe",
+        description: "Lass dich von Chessies verspielter Art verzaubern! Mit extra flauschigem Fell und einem niedlichen Lächeln bringt sie garantiert jeden zum Grinsen. Dein persönlicher Gute-Laune-Garant! 🐒💝",
         price: 7.99,
         image: "https://m.media-amazon.com/images/I/71PhWZYzg3L._AC_SL1500_.jpg",
         link: "https://amzn.to/4jRWDbG"
-    },
+    }
     // {
     //     id: 9,
     //     title: "Baby Yoda Plüsch",
