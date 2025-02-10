@@ -1,7 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
+import '@dotlottie/player-component';
+
+export const initHeaderAnimation = () => {
     const headerAnimation = document.querySelector('#headerAnimation');
     let hasReachedTarget = false;
-    
+   
     headerAnimation.addEventListener('ready', () => {
         headerAnimation.play();
         headerAnimation.addEventListener('frame', (e) => {
@@ -13,4 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+};
+
+export const initAnimations = () => {
+    initHeaderAnimation();
+};
