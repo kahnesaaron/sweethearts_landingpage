@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
@@ -10,21 +10,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 18
           
-      - name: Install dependencies
-        working-directory: ./landingpage
+      - name: Install Dependencies
         run: npm install
         
       - name: Build
-        working-directory: ./landingpage
         run: npm run build
         
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: landingpage/build
           branch: gh-pages
+          folder: build
