@@ -1,0 +1,42 @@
+{
+  "name": "landingpage",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kahnesaaron/sweethearts_landingpage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kahnesaaron/sweethearts_landingpage/issues"
+  },
+  "homepage": "https://github.com/kahnesaaron/sweethearts_landingpage#readme",
+  "dependencies": {
+    "@dotlottie/player-component": "^2.7.12",
+    "@fontsource/josefin-sans": "^5.1.1",
+    "@fontsource/nunito": "^5.1.1",
+    "@fontsource/quicksand": "^5.1.1",
+    "express": "^4.21.2",
+    "gsap": "^3.12.7",
+    "scrolltrigger": "^1.0.1"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "^1.12.0",
+    "clean-css": "^5.3.3",
+    "critical": "^7.2.1",
+    "esbuild": "^0.25.0",
+    "lightningcss": "^1.29.1",
+    "parcel-bundler": "^1.12.5",
+    "rollup": "^4.34.6",
+    "terser": "^5.38.1",
+    "vite": "^5.4.14"
+  },
+  "description": ""
+}
