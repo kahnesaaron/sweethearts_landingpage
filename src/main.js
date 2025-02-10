@@ -3,13 +3,6 @@ import { initAnimations } from './animations.js';
 import { products } from './products.js';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// Fonts
-import '@fontsource/quicksand/500.css';  // Primary font
-import '@fontsource/josefin-sans/600.css';  // Headers
-import '@fontsource/nunito/400.css';  // Body text
-
-
 // Styles
 import './styles.css';
 import './base.css';
