@@ -16,13 +16,15 @@ jobs:
           node-version: '18'
           
       - name: Install dependencies
+        working-directory: ./landingpage
         run: npm install
         
       - name: Build
+        working-directory: ./landingpage
         run: npm run build
         
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build
+          folder: landingpage/build
           branch: gh-pages
