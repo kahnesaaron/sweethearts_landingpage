@@ -1,7 +1,2 @@
 # Node.js files
 node_modules/
-
-# Server files
-server.js
-key.pem
-cert.pem
